@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a452f970e3e90748b8e93734c35c373, type: 3}
+  m_Name: ClueList
+  m_EditorClassIdentifier: 
+  List:
+  - ClueTitle: 'Clue #1'
+    ClueTextHint1: "I don\u2019t remember my time there but I needed it. "
+    ClueTextHint2: Too hard, too soft or just right
+    ClueTextHint3: "It\u2019s a bed you retard"
+    CorrespondingObjectName: Bed
+  - ClueTitle: 'Clue #2'
+    ClueTextHint1: 'I learned in a world of black, white and dust. '
+    ClueTextHint2: 'Nails go very poorly with it. '
+    ClueTextHint3: B L A C K B O A R D, english do you speak it.
+    CorrespondingObjectName: Blackboard
+  - ClueTitle: 'Clue #3'
+    ClueTextHint1: 'The combination of a means of transport and my dog Willie '
+    ClueTextHint2: When you fall it catches you but helps you stumble
+    ClueTextHint3: Car + Pet = Carpet, not a very good detective are you?
+    CorrespondingObjectName: Carpet
+  - ClueTitle: 'Clue #4'
+    ClueTextHint1: '4 legs, 2 arms and a back what is it? '
+    ClueTextHint2: It separates you from the floor.
+    ClueTextHint3: 'Begins with C, ends in hair, '
+    CorrespondingObjectName: Chair
+  - ClueTitle: 'Clue #5'
+    ClueTextHint1: 'It helps you to hold things that are too hot and too wet. '
+    ClueTextHint2: You can find it in the kitchen
+    ClueTextHint3: "It\u2019s on the table, the only thing on the table"
+    CorrespondingObjectName: Cup
