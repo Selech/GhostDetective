@@ -7,14 +7,34 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: Arms
+    100004: Arms.L
+    100006: Arms.R
+    100008: Hat
+    100010: Pipe
     400000: //RootNode
     400002: Arms
+    400004: Arms.L
+    400006: Arms.R
+    400008: Hat
+    400010: Pipe
     2300000: //RootNode
     2300002: Arms
+    2300004: Arms.L
+    2300006: Arms.R
+    2300008: Hat
+    2300010: Pipe
     3300000: //RootNode
     3300002: Arms
+    3300004: Arms.L
+    3300006: Arms.R
+    3300008: Hat
+    3300010: Pipe
     4300000: Ghost
     4300002: Arms
+    4300004: Arms.R
+    4300006: Pipe
+    4300008: Arms.L
+    4300010: Hat
   materials:
     importMaterials: 1
     materialName: 0
