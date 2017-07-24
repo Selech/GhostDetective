@@ -1,12 +1,16 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomScript : MonoBehaviour {
 
+    //[Header("Camera settings old")]
+    //public float Size;
+    //public Vector3 Position;
+
     [Header("Camera settings")]
-    public float Size;
-    public Vector3 Position;
+    public CinemachineVirtualCamera Camera; 
 
     [Header("Wall settings")]
     public WallScript[] Walls;
@@ -14,7 +18,7 @@ public class RoomScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Controller.ChangeWalls(Walls, Position, Size);
+        Controller.ChangeWalls(Walls, Camera);
     }
 
 

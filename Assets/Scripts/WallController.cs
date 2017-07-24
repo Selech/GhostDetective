@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WallController : MonoBehaviour {
 
     public WallScript[] Walls;
+    public CinemachineVirtualCamera[] VirtualCameras;
 
     public CamController CamController;
 
@@ -21,5 +23,25 @@ public class WallController : MonoBehaviour {
 
         CamController.SetPosition(targetPos);
         CamController.TargetSize = targetSize;
+    }
+
+    public void ChangeWalls(WallScript[] fadedWalls, CinemachineVirtualCamera activeCam)
+    {
+        foreach (var wall in Walls)
+        {
+            wall.ShowWall();
+        }
+
+        foreach (var wall in fadedWalls)
+        {
+            wall.FadeWall();
+        }
+
+        foreach (var cam in VirtualCameras)
+        {
+            cam.gameObject.SetActive(false);
+        }
+
+        activeCam.gameObject.SetActive(true);
     }
 }
