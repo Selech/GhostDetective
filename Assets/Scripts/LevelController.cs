@@ -43,7 +43,7 @@ public class LevelController : MonoBehaviour {
         int nextClue = clues[Random.Range(0, clues.Count)];
         UsedClues.Add(nextClue);
         Statics.PlayerPrefsStrings.UsedCluesList = UsedClues;
-
+         
         return nextClue;
     }
 

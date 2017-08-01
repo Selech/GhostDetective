@@ -7,15 +7,12 @@ public class DoorScript : MonoBehaviour {
     public Transform PositionOut;
     public Transform PositionIn;
 
-    private bool GoingOut = true;
+    private bool GoingOut = false;
 
     public Vector3 GetPosition()
     {
+        GoingOut = !GoingOut;
         return GoingOut ? PositionOut.position : PositionIn.position;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        GoingOut = !GoingOut;
-    }
 }

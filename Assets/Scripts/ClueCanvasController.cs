@@ -19,7 +19,7 @@ public class ClueCanvasController : MonoBehaviour {
         var ranClue = ClueList.List[levelController.RandomClue(ClueList.List.Count)];
         Statics.PlayerPrefsStrings.UnlockedHintsString = 1;
 
-        //GameObject.Find(ranClue.CorrespondingObjectName).GetComponent<InteractableObject>().Activate();
+        GameObject.Find(ranClue.CorrespondingObjectName).GetComponent<InteractableObject>().Activate();
 
         var ranClueNote = UnityEngine.Random.Range(0, 2);
         activeClueNote = ranClueNote == 0 ? ClueNote1 : ClueNote2;

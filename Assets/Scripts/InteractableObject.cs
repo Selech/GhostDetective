@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour {
-    private BoxCollider activationCollider;
+    public BoxCollider triggerCollider;
+    public BoxCollider touchCollider;
 
     public void Activate()
     {
-        activationCollider = GetComponentInChildren<BoxCollider>();
-    }
+        triggerCollider.gameObject.SetActive(true);
+        touchCollider.gameObject.SetActive(true);
+	}
 
     void OnTriggerEnter(Collider other)
     {
-        
+        Complete();
     }
 
     public void Complete()
     {
-
+        print("Solved");
     }
 }
