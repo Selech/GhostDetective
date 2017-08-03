@@ -33,7 +33,14 @@ public class InputController : MonoBehaviour
         if (hits.Length > 0)
         {
             var hit = hits.First();
-            agent.SetDestination(hit.collider.gameObject.GetComponent<DoorScript>().GetPosition());
+
+            if(hit.collider.gameObject.tag == "ClickableObject"){
+                agent.SetDestination(hit.collider.gameObject.transform.parent.position);
+            }
+            else if(hit.collider.gameObject.tag == "Door"){
+				agent.SetDestination(hit.collider.gameObject.GetComponent<DoorScript>().GetPosition());
+            }
+
         }
     }
 }
