@@ -14,6 +14,15 @@ public class ClueCanvasController : MonoBehaviour {
     public ClueNoteObject ClueNote2;
     private ClueNoteObject activeClueNote;
 
+    public void CompletePuzzle()
+    {
+        // Playable cutscene like ting, kommer..!
+        var letter = levelController.GetLetter();
+        print("Unlocked letter: " + letter);
+
+        GetNewClue();
+    }
+
     public void GetNewClue()
     {
         var ranClue = ClueList.List[levelController.RandomClue(ClueList.List.Count)];

@@ -19,6 +19,7 @@ public class InteractableObject : MonoBehaviour {
 
     public void Complete()
     {
-        print("Solved");
+        // Ryk ud som Start()
+        GameObject.Find("ClueCanvas").GetComponent<ClueCanvasController>().CompletePuzzle();
     }
 }

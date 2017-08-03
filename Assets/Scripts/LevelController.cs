@@ -18,13 +18,13 @@ public class LevelController : MonoBehaviour {
         UsedClues = Statics.PlayerPrefsStrings.UsedCluesList;
         UnlockedLetters = Statics.PlayerPrefsStrings.UnlockedLetters;
 
-        RemainingLetters = new List<char>();
-        var letters = currentName.ToList();
-        foreach (var letter in UnlockedLetters)
+        if(currentName == "")
         {
-            letters.Remove(letter);
+            currentName = "Gary";
+            Statics.PlayerPrefsStrings.CurrentName = currentName;
         }
-        RemainingLetters = letters;
+
+        RefreshRemainingLetters();
     }
 
     public int RandomClue(int max)
@@ -47,8 +47,27 @@ public class LevelController : MonoBehaviour {
         return nextClue;
     }
 
+
     public char GetLetter()
     {
-        return RemainingLetters[Random.Range(0, RemainingLetters.Count)];
+        var unlockedLetter = RemainingLetters[Random.Range(0, RemainingLetters.Count-1)];
+
+        UnlockedLetters.Add(unlockedLetter);
+        RefreshRemainingLetters();
+
+        return unlockedLetter;
+    }
+
+    void RefreshRemainingLetters()
+    {
+        Statics.PlayerPrefsStrings.UnlockedLetters = UnlockedLetters;
+
+        RemainingLetters = new List<char>();
+        var letters = currentName.ToList();
+        foreach (var letter in UnlockedLetters)
+        {
+            letters.Remove(letter);
+        }
+        RemainingLetters = letters;
     }
 }
