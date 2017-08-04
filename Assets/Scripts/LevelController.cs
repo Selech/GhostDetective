@@ -20,7 +20,7 @@ public class LevelController : MonoBehaviour {
 
         if(currentName == "")
         {
-            currentName = "Gary";
+            currentName = "GARY";
             Statics.PlayerPrefsStrings.CurrentName = currentName;
         }
 

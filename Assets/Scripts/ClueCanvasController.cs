@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
-public class ClueCanvasController : MonoBehaviour {
-
+public class ClueCanvasController : MonoBehaviour
+{
     public ClueScriptableObject ClueList;
     public LevelController levelController;
     public GameObject ClueMenuBtn;
@@ -14,13 +15,24 @@ public class ClueCanvasController : MonoBehaviour {
     public ClueNoteObject ClueNote2;
     private ClueNoteObject activeClueNote;
 
+    public Text GetLetterText;
+    public PlayableDirector GetLetterPlayable;
+    private bool animationPlaying;
+
     public void CompletePuzzle()
     {
         // Playable cutscene like ting, kommer..!
+
+        GetLetterPlayable.gameObject.SetActive(true);
+        
         var letter = levelController.GetLetter();
         print("Unlocked letter: " + letter);
+        GetLetterText.text = letter + "";
 
+        GetLetterPlayable.Play();
         GetNewClue();
+       gameObject.SetActive(false);
+//        GetNewClue();
     }
 
     public void GetNewClue()
@@ -47,7 +59,7 @@ public class ClueCanvasController : MonoBehaviour {
         activeClueNote.Show();
         ClueMenuBtn.SetActive(false);
     }
-} 
+}
 
 [Serializable]
 public class ClueNoteObject
@@ -71,7 +83,7 @@ public class ClueNoteObject
 
         switch (unlockedHints)
         {
-            case 1 :
+            case 1:
                 return currentClue.ClueTextHint1;
 
             case 2:

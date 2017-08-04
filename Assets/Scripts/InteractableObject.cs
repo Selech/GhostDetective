@@ -20,6 +20,6 @@ public class InteractableObject : MonoBehaviour {
     public void Complete()
     {
         // Ryk ud som Start()
-        GameObject.Find("ClueCanvas").GetComponent<ClueCanvasController>().CompletePuzzle();
+        GameObject.Find("MainCanvas").GetComponent<ClueCanvasController>().CompletePuzzle();
     }
 }

@@ -9,11 +9,13 @@ public class GhostScript : MonoBehaviour {
 		
 	}
 
-    
+	void OnCollisionEnter(Collision other)
+	{
+		
+	}
 
 
-
-    // Update is called once per frame
+	// Update is called once per frame
     void Update () {
 		
 	}
