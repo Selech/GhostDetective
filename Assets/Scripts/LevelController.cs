@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class LevelController : MonoBehaviour {
 
     [HideInInspector]
     public List<char> RemainingLetters;
+
+    public Text UnlockedLettersText;
 
     // Use this for initialization
     void Start () {

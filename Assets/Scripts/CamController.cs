@@ -38,7 +38,7 @@ public class CamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var from = Player.position + new Vector3(5, 4, -5);
+        // var from = Player.position + new Vector3(5, 4, -5);
 
         if (Input.acceleration.z < StartTilt.z + offset && panning.x > -panningLimit && panning.z < panningLimit)
         { panning += new Vector3(Input.acceleration.z- StartTilt.z, 0, -Input.acceleration.z+ StartTilt.z) * PanningSpeed; } // up

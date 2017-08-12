@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour {
+public class InteractableObject : MonoBehaviour
+{
     public BoxCollider triggerCollider;
     public BoxCollider touchCollider;
 
@@ -10,7 +11,13 @@ public class InteractableObject : MonoBehaviour {
     {
         triggerCollider.gameObject.SetActive(true);
         touchCollider.gameObject.SetActive(true);
-	}
+    }
+
+    public void Deactivate()
+    {
+        triggerCollider.gameObject.SetActive(false);
+        touchCollider.gameObject.SetActive(false);
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,6 +27,7 @@ public class InteractableObject : MonoBehaviour {
     public void Complete()
     {
         // Ryk ud som Start()
+        Deactivate();
         GameObject.Find("MainCanvas").GetComponent<ClueCanvasController>().CompletePuzzle();
     }
 }

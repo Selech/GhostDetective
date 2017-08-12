@@ -18,21 +18,20 @@ public class ClueCanvasController : MonoBehaviour
     public Text GetLetterText;
     public PlayableDirector GetLetterPlayable;
     private bool animationPlaying;
+    public Text UnlockedLettersText;
 
     public void CompletePuzzle()
     {
         // Playable cutscene like ting, kommer..!
-
         GetLetterPlayable.gameObject.SetActive(true);
-        
         var letter = levelController.GetLetter();
-        print("Unlocked letter: " + letter);
         GetLetterText.text = letter + "";
 
         GetLetterPlayable.Play();
         GetNewClue();
-       gameObject.SetActive(false);
-//        GetNewClue();
+        UnlockedLettersText.text += letter;
+        gameObject.SetActive(false);
+        //        GetNewClue();
     }
 
     public void GetNewClue()
@@ -46,6 +45,7 @@ public class ClueCanvasController : MonoBehaviour
         activeClueNote = ranClueNote == 0 ? ClueNote1 : ClueNote2;
         activeClueNote.SetClue(ranClueNote == 0, ranClue);
         activeClueNote.ClueNoteGameObject.GetComponent<Button>().onClick.AddListener(CloseClue);
+        OpenClue();
     }
 
     public void CloseClue()
@@ -74,7 +74,6 @@ public class ClueNoteObject
         currentClue = clue;
         ClueNoteTitle.text = currentClue.ClueTitle;
         ClueNoteText.text = GetUnlockedHints();
-        Show();
     }
 
     public string GetUnlockedHints()
